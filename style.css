@@ -203,6 +203,7 @@ body {
 /* footer styles */
 
   .contact-footer {
+    position: fixed;
     background-color: #484848;
     height: 100px;
     padding-top: 10px;
