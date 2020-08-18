@@ -28,7 +28,7 @@ body {
 
 .cover {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     background-color: BLACK;
 }
 
@@ -80,27 +80,20 @@ body {
     text-align: right;
 }
 
-.artist-card {
-    position: relative;
-    display: inline-block;
-    width: 200px;
-    height: 300px;
-    box-shadow: 0px 1px 2px 0px black;
-    margin: 10px;
-    background-image: url("img/artist_bg.png");
+.event-top-img {
+    background-image: url("img/event_head.png");
+    height: 400px;
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-box-shadow: inset 0px -22px 25px -10px rgba(0, 0, 0, 1);
+    -moz-box-shadow: inset 0px -22px 25px -10px rgba(0, 0, 0, 1);
+    box-shadow: inset 0px -22px 25px -10px rgba(0, 0, 0, 1);
 }
 
-.artist-card-desc {
-    position: absolute;
-    bottom: 0;
-    margin: 10px;
-}
-
-.event-top-img {
-    background-image: url("img/event_head.png");
+.artist-top-img {
+    background-image: url("img/sample_top.png");
     height: 400px;
     background-attachment: fixed;
     background-position: center;
@@ -135,15 +128,14 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+
 /*Start of Artist Page CSS*/
 
-.content{
-    text-align:center;
+.content {
+    text-align: center;
 }
 
-
-
-.artistbox{
+.artistbox {
     margin-top: 20px;
 }
 
@@ -154,15 +146,16 @@ body {
     height: 300px;
     box-shadow: 0px 1px 2px 0px black;
     margin: 10px;
+    cursor: pointer;
 }
 
 .artist-block-name {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 9px 0 10px 0; 
+    padding: 9px 0 10px 0;
     opacity: .8;
-    background-color: #003303; 
+    background-color: #003303;
     text-align: center;
 }
 
@@ -171,11 +164,10 @@ body {
     opacity: 0;
     position: absolute;
     top: 10px;
-    left:10px;
-
+    left: 10px;
     width: 180px;
     height: 280px;
-    background-color: #003303; 
+    background-color: #003303;
     text-align: center;
 }
 
@@ -186,48 +178,69 @@ body {
 .artist-block:hover .artist-block-hide .artist-block-name {
     opacity: 0;
 }
-  
+
 .artist-block:hover .artist-block-details-box {
     opacity: .9;
 }
 
+
 /*End of Artist Page CSS*/
 
+
 /*Start of Contact Page CSS*/
-.contact-container{
-            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center center;
-        }
+
+.contact-container {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+
 /* footer styles */
 
-  .contact-footer {
+.contact-footer {
     position: fixed;
     background-color: #484848;
     height: 100px;
     padding-top: 10px;
     text-align: center;
-  }
+}
 
-  .contact-footer p{
+.contact-footer p {
     color: white;
     font-weight: bold;
     font-size: 16px;
-  }
+}
 
-  .contact-social-links a{
+.contact-social-links a {
     color: white;
     padding: 0px 5px 0px 5px;
-  }
+}
 
-  .contact-social-links a:hover {
+.contact-social-links a:hover {
     color: #FF6363;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-  }
+}
+
+
 /*End of footer styles*/
+
+
 /*End of Contact Page CSS*/
+
+
+/*Start of Artist Profile CSS*/
+
+.artist-img {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+
+/*End of Artist Profile CSS*/
