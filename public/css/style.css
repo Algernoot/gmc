@@ -208,8 +208,7 @@ body {
 }
 .social-icons li {
     vertical-align: top;
-    display: inline;
-    height: 100px;
+    display: inline
 }
 .social-icons a {
     color: #fff;
