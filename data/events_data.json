@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5f4f752a0e914514d863bf88"},"images":[" "],"artists":[{"$oid":"5f4f752a0e914514d863bf87"}],"name":"Sample Event","description":"Sample event description. See your favorite artists perform on this event. Multiple people from different genres","date":{"$date":{"$numberLong":"1599042858087"}},"__v":{"$numberInt":"0"}}

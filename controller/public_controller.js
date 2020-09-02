@@ -7,6 +7,9 @@
  */
 
 const mongoose = require('mongoose');
+const artist_model = require('../models/artist');
+const event_model = require('../models/event');
+const admin_model = require('../models/admin');
 
 exports.get_homepage = function(req, res) {
     res.render('home', {

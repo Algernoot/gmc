@@ -18,4 +18,9 @@
 1. Install all dependencies using the command line `npm install --save`
 2. Use `npm run dev` to run using nodemon. Use `npm start` to run once.
 
+### Importing MongoDB data
+1. Create database with name `gmcdb` at MongoDB (Shell or Community). Use either `admins`, `artists`, or `events` for Collections on initial DB create.
+2. Create the remaining Collections. `admins`, `artists`, and `events` must be created.
+3. Go to each individual Collection and add the respective data from the data folder.
+
 **NOTES:** Runs on port 8000.

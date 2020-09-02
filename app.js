@@ -17,6 +17,9 @@ const public_route = require('./routes/public_routes');
 const event_route = require('./routes/event_routes');
 const artist_route = require('./routes/artist_routes');
 
+//database
+const dbURL = 'mongodb://localhost:27017/gmcdb';
+mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //app settings
 app.set('view engine', 'hbs');

@@ -7,6 +7,7 @@
  */
 
 const mongoose = require('mongoose');
+const event_model = require('../models/event');
 
 exports.get_eventpage = function(req, res) {
     res.render('eventpage', {

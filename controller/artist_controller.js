@@ -7,6 +7,7 @@
  */
 
 const mongoose = require('mongoose');
+const artist_model = require('../models/artist');
 
 exports.get_artistpage = function(req, res) {
     res.render('artistpage', {
