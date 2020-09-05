@@ -1,0 +1,13 @@
+<div class="mx-5 px-5">
+    {{#if artists}}
+        <h1>Search Results</h1>
+        <hr>
+        <p class="title"><span class="green-font">A</span>rtists</p>
+        {{#each artists}}
+            <p>{{name}}</p>
+            <p>{{history}}</p>
+        {{/each}}
+    {{else}}
+        <p>No search results. Try a different keyword.</p>
+    {{/if}}
+</div>

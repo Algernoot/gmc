@@ -22,6 +22,11 @@ $(document).ready(function() {
         $(".wrapper").css('padding-top', '80px');
     }
 
+    //hide search bar when moving to another page (Buggy when redirecting)
+    $('#nav-search').parent().hide().delay(200).slideDown("slow");
+
+
+
     /** End of Navbar settings */
 
     $('body').on('click', '.event-card', function() {
@@ -30,4 +35,5 @@ $(document).ready(function() {
     $('body').on('click', '.artist-block', function() {
         window.location.href = "/artists/artistId";
     });
+
 });

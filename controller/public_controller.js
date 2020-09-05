@@ -22,5 +22,15 @@ exports.get_aboutpage = function(req, res) {
     res.render('about', {
         title: 'GMC - About Us',
         active: { about: true }
-    })
+    });
+}
+
+exports.get_searchpage = function(req, res) {
+    var query = req.query;
+    artist_model.get_all({ name: { "$regex": query.search, "$options": "i" } }, function(artists) {
+        res.render('search', {
+            title: 'GMC - Search for ' + query.search,
+            artists
+        });
+    });
 }

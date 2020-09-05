@@ -12,3 +12,5 @@ const public_controller = require('../controller/public_controller');
 router.get('/', public_controller.get_homepage);
 
 router.get('/about', public_controller.get_aboutpage);
+
+router.get('/search', public_controller.get_searchpage);
