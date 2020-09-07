@@ -149,6 +149,57 @@ body {
     position: absolute;
 }
 
+iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+.bottom_cover{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 47px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+  
+.top_cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+  
+.transparent{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+
+.event-card:hover iframe, .event-card:hover .bottom_cover, .event-card:hover .top_cover{
+    opacity: 1;
+}
+
+#row1{
+  position: relative;
+}
+
 
 /** End of event cards styles */
 

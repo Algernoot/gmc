@@ -36,4 +36,13 @@ $(document).ready(function() {
         window.location.href = "/artists/artistId";
     });
 
+    var playersrc = "none";
+    $('.event-card').hover(function(){
+        
+        playersrc = $(this).find('iframe').attr("src");
+        $(this).find('iframe').attr("src", playersrc+"&autoplay=1");
+    }, function(){
+        $(this).find('iframe').attr("src",playersrc);
+    });
+
 });
