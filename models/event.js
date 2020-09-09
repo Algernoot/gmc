@@ -15,7 +15,7 @@ const event_schema = mongoose.Schema({
     description: { type: String, required: [true, "No description given."] },
     images: { type: [String] },
     date: { type: Date },
-    artists: { type: [mongoose.Schema.Types.ObjectId], ref: 'Artist' }
+    artists: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Artist' }]
 });
 
 const event_model = mongoose.model('Event', event_schema);
@@ -49,7 +49,7 @@ exports.get_one = function(filter, callback) {
  * callback - callback for found event instance
  */
 exports.get_all = function(filter, callback) {
-    event_model.find(filter, function(err, events) {
+    event_model.find(filter).populate('artists').exec(function(err, events) {
         if (err) throw err;
         var event_objects = [];
 

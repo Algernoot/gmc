@@ -1,10 +1,14 @@
 <div class="center mx-5">
-    <p class="title"><span class="green-font">U</span>PCOMING <span class="green-font">E</span>VENTS</p>
-    <div class="eventbox mx-4">
-        {{>event_card}}
-        {{>event_card}}
-        {{>event_card}}
-        {{>event_card}}
-        {{>event_card}}
+    <p class="title"><span class="green-font">P</span>AST <span class="green-font">E</span>VENTS</p>
+    <div class="eventbox-past mx-4">
+        {{#each past}}
+            {{>event_card event = this}}
+        {{/each}}
+    </div>
+    <p class="title mt-5"><span class="green-font">U</span>PCOMING <span class="green-font">E</span>VENTS</p>
+    <div class="eventbox-future mx-4">
+        {{#each upcoming}}
+            {{>event_card event = this}}
+        {{/each}}
     </div>
 </div>

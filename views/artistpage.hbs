@@ -1,10 +1,8 @@
 <div class="center mx-5">
     <div class="artistbox mx-4">
         <p class="title"><span class="green-font">A</span>RTISTS</p>
-        {{>artist_card}}
-        {{>artist_card}}
-        {{>artist_card}}
-        {{>artist_card}}
-        {{>artist_card}}
+        {{#each artists}}
+            {{>artist_card artist = this}}
+        {{/each}}
     </div>
 </div>

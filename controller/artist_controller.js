@@ -10,10 +10,13 @@ const mongoose = require('mongoose');
 const artist_model = require('../models/artist');
 
 exports.get_artistpage = function(req, res) {
-    res.render('artistpage', {
-        title: 'GMC - Artists',
-        active: { artists: true }
-    })
+    artist_model.get_all({}, function(artists) {
+        res.render('artistpage', {
+            title: 'GMC - Artists',
+            artists,
+            active: { artists: true }
+        });
+    });
 }
 
 exports.get_artist_profile = function(req, res) {

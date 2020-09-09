@@ -1,12 +1,23 @@
 <div class="mx-5 px-5">
-    {{#if artists}}
-        <h1>Search Results</h1>
-        <hr>
-        <p class="title"><span class="green-font">A</span>rtists</p>
-        {{#each artists}}
-            <p>{{name}}</p>
-            <p>{{history}}</p>
-        {{/each}}
+    <h1>Search Results</h1>
+    <hr>
+    {{#if (search_not_null artists events)}}
+        {{#if artists}}
+            <p class="title"><span class="green-font">A</span>rtists</p>
+            <ul>
+            {{#each artists}}
+                <li><a href="#">{{name}}</a></li>
+            {{/each}}
+            </ul>
+        {{/if}}
+        {{#if events}}
+            <p class="title"><span class="green-font">E</span>vents</p>
+            <ul>
+            {{#each events}}
+                <li><a href="#">{{name}} ({{date_format date}})</a></li>
+            {{/each}}
+            </ul>
+        {{/if}}
     {{else}}
         <p>No search results. Try a different keyword.</p>
     {{/if}}

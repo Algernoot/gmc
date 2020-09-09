@@ -12,9 +12,15 @@ const event_model = require('../models/event');
 const admin_model = require('../models/admin');
 
 exports.get_homepage = function(req, res) {
-    res.render('home', {
-        title: 'GMC - Home',
-        active: { home: true }
+    artist_model.get_all({}, function(artists) {
+        event_model.get_all({}, function(events) {
+            res.render('home', {
+                title: 'GMC - Home',
+                artists,
+                events,
+                active: { home: true }
+            });
+        });
     });
 }
 
@@ -27,10 +33,14 @@ exports.get_aboutpage = function(req, res) {
 
 exports.get_searchpage = function(req, res) {
     var query = req.query;
-    artist_model.get_all({ name: { "$regex": query.search, "$options": "i" } }, function(artists) {
-        res.render('search', {
-            title: 'GMC - Search for ' + query.search,
-            artists
-        });
+    artist_model.get_all({ name: { "$regex": query.search, "$options": "i" } }, function(artists_result) {
+        event_model.get_all({ name: { "$regex": query.search, "$options": "i" } },
+            function(events) {
+                res.render('search', {
+                    title: 'GMC - Search for ' + query.search,
+                    artists: artists_result,
+                    events
+                });
+            });
     });
 }

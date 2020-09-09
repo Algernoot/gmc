@@ -10,10 +10,22 @@ const mongoose = require('mongoose');
 const event_model = require('../models/event');
 
 exports.get_eventpage = function(req, res) {
-    res.render('eventpage', {
-        title: 'GMC - Events',
-        active: { events: true }
-    })
+    event_model.get_all({}, function(events) {
+        var past = null;
+        var upcoming = null;
+
+        let current_date = new Date();
+        past = events.filter(event => event.date < current_date);
+        upcoming = events.filter(event => event.date > current_date);
+
+
+        res.render('eventpage', {
+            title: 'GMC - Events',
+            past,
+            upcoming,
+            active: { events: true }
+        });
+    });
 }
 
 exports.get_event_profile = function(req, res) {

@@ -149,7 +149,7 @@ body {
     position: absolute;
 }
 
-iframe{
+iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -157,7 +157,7 @@ iframe{
     transition: all 0.3s ease-in;
 }
 
-.bottom_cover{
+.bottom_cover {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -168,8 +168,7 @@ iframe{
     transition: all 0.3s ease-out;
 }
 
-  
-.top_cover{
+.top_cover {
     position: absolute;
     left: 0;
     top: 0;
@@ -180,8 +179,7 @@ iframe{
     transition: all 0.3s ease-out;
 }
 
-  
-.transparent{
+.transparent {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -191,17 +189,21 @@ iframe{
     backdrop-filter: blur(1px);
 }
 
-
-.event-card:hover iframe, .event-card:hover .bottom_cover, .event-card:hover .top_cover{
+.event-card:hover iframe,
+.event-card:hover .bottom_cover,
+.event-card:hover .top_cover {
     opacity: 1;
 }
 
-#row1{
-  position: relative;
+#row1 {
+    position: relative;
 }
 
 
 /** End of event cards styles */
+
+
+/** Start of Carousel Styles **/
 
 .carousel {
     display: inline-block;
@@ -209,6 +211,9 @@ iframe{
     height: 500px;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+/** End of Carousel Styles **/
 
 
 /*Start of Artist Page CSS*/
@@ -286,7 +291,10 @@ iframe{
 }
 
 .fa-facebook,
-.fa-twitter {
+.fa-twitter,
+.fa-instagram,
+.fa-spotify,
+.fa-soundcloud {
     padding: 10px 14px;
     -o-transition: .5s;
     -ms-transition: .5s;
@@ -297,7 +305,10 @@ iframe{
 }
 
 .fa-facebook:hover,
-.fa-twitter:hover {
+.fa-twitter:hover,
+.fa-instagram:hover,
+.fa-spotify:hover,
+.fa-soundcloud:hover {
     background-color: white;
 }
 
