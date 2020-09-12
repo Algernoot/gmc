@@ -7,5 +7,10 @@ module.exports = {
     //Date format for printing text (MONTH FULL-DAY-YEAR)
     date_format: function(date) {
         return date.toLocaleString('default', { month: 'long' }) + " " + date.getDate() + " " + date.getFullYear();
+    },
+
+    //format for artist name
+    artist_name: function(name) {
+        return '<span class="green-font">' + name.slice(0, 1) + '</span>' + name.slice(1);
     }
 }

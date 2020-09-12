@@ -1,36 +1,20 @@
 <div class="d-flex top-img-short" style="background-image: url('/img/event_bg.png')"></div>
 <div class="cover d-flex" id="startchange">
     <div class="event-header row px-5 w-100">
-        <p>SAMPLE EVENT NAME</p>
-        <p class="event-date">DECEMBER 02 2020</p>
+        <p>{{event.name}}</p>
+        <p class="event-date">{{date_format event.date}}</p>
     </div>
 </div>
 <div class="wrapper my-5">
     <div class="center">
         <!-- Event About -->
         <p class="title"><span class="green-font">A</span>BOUT EVENT</p>
-        <p>Sample description for event. Small info about event. maybe something else.</p>
+        <p>{{event.description}}</p>
         <!-- Event Performances -->
         <div class="artistbox mx-4">
-            <p class="title"><span class="green-font">A</span>RTISTS</p>
-            <div class="artist-block">
-                <div class=artist-block-hide>
-                    <img class="image" src="/img/artist_bg.png">
-                    <p class="artist-block-name">Artist Name</p>
-                </div>
-            </div>
-            <div class="artist-block">
-                <div class=artist-block-hide>
-                    <img class="image" src="/img/artist_bg.png">
-                    <p class="artist-block-name">Artist Name</p>
-                </div>
-            </div>
-            <div class="artist-block">
-                <div class=artist-block-hide>
-                    <img class="image" src="/img/artist_bg.png">
-                    <p class="artist-block-name">Artist Name</p>
-                </div>
-            </div>
+            {{#each event.artists}}
+                {{> artist_card artist = this}}
+            {{/each}}
         </div>
         <!-- Event Gallery-->
         <p class="title"><span class="green-font">G</span>ALLERY</p>

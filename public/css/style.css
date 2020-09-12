@@ -129,6 +129,10 @@ body {
     position: absolute;
     bottom: 0;
     margin: 10px;
+    width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .event-card-date {

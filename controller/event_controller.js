@@ -29,7 +29,12 @@ exports.get_eventpage = function(req, res) {
 }
 
 exports.get_event_profile = function(req, res) {
-    res.render('event_profile', {
-        title: 'GMC - Event Name'
-    })
+    let id = req.params.eventId;
+
+    event_model.get_one({ _id: id }, function(event) {
+        res.render('event_profile', {
+            title: 'GMC - Event Name',
+            event
+        });
+    });
 }

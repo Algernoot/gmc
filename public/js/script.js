@@ -30,19 +30,23 @@ $(document).ready(function() {
     /** End of Navbar settings */
 
     $('body').on('click', '.event-card', function() {
-        window.location.href = "/events/eventId";
+        let id = $(this).attr('data');
+
+        window.location.href = "/events/" + id;
     });
     $('body').on('click', '.artist-block', function() {
-        window.location.href = "/artists/artistId";
+        let id = $(this).attr('data');
+
+        window.location.href = "/artists/" + id;
     });
 
     var playersrc = "none";
-    $('.event-card').hover(function(){
-        
+    $('.event-card').hover(function() {
+
         playersrc = $(this).find('iframe').attr("src");
-        $(this).find('iframe').attr("src", playersrc+"&autoplay=1");
-    }, function(){
-        $(this).find('iframe').attr("src",playersrc);
+        $(this).find('iframe').attr("src", playersrc + "&autoplay=1");
+    }, function() {
+        $(this).find('iframe').attr("src", playersrc);
     });
 
 });

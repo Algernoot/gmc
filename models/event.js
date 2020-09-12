@@ -31,7 +31,7 @@ const event_model = mongoose.model('Event', event_schema);
  * callback - callback for found event instance
  */
 exports.get_one = function(filter, callback) {
-    event_model.findOne(filter, function(err, event) {
+    event_model.findOne(filter).populate('artists').exec(function(err, event) {
         if (err) throw err;
 
         callback(event.toObject());

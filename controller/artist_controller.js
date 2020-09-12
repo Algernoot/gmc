@@ -20,7 +20,12 @@ exports.get_artistpage = function(req, res) {
 }
 
 exports.get_artist_profile = function(req, res) {
-    res.render('artist_profile', {
-        title: 'GMC - Artist Name'
-    })
+    var id = req.params.artistId;
+
+    artist_model.get_one({ _id: id }, function(artist) {
+        res.render('artist_profile', {
+            title: 'GMC - Artist Name',
+            artist
+        });
+    });
 }
