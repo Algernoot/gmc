@@ -25,6 +25,13 @@ $(document).ready(function() {
     //hide search bar when moving to another page (Buggy when redirecting)
     $('#nav-search').parent().hide().delay(200).slideDown("slow");
 
+    //check if search input is empty
+    $('body').on('click', '#nav-btn-search', function() {
+        if ($('#nav-search').val() === '') {
+            $('#nav-search').focus();
+            return false;
+        }
+    })
 
 
     /** End of Navbar settings */
