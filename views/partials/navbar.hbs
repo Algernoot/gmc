@@ -16,8 +16,15 @@
             <li class="nav-item ml-5 {{#if active.events}} active {{/if}}">
                 <a class="nav-link" href="/events">Events</a>
             </li>
-            <li class="nav-item ml-5 {{#if active.artists}} active {{/if}}">
-                <a class="nav-link" href="/artists">Artists</a>
+            <li class="nav-item ml-5 dropdown {{#if active.artists}} active {{/if}}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Artists
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/bands">Bands</a>
+                    <a class="dropdown-item" href="/artists">Solo</a>                
+                </div>
             </li>
             <li class="nav-item ml-5 {{#if active.about}} active {{/if}}">
                 <a class="nav-link" href="/about">About Us</a>

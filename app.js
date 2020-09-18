@@ -16,6 +16,7 @@ const helpers = require("./helpers");
 const public_route = require('./routes/public_routes');
 const event_route = require('./routes/event_routes');
 const artist_route = require('./routes/artist_routes');
+const band_route = require('./routes/band_routes');
 
 //database
 const dbURL = 'mongodb://localhost:27017/gmcdb';
@@ -47,3 +48,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', public_route);
 app.use('/events', event_route);
 app.use('/artists', artist_route);
+app.use('/bands', band_route);
