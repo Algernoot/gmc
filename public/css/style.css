@@ -207,19 +207,6 @@ iframe {
 /** End of event cards styles */
 
 
-/** Start of Carousel Styles **/
-
-.carousel {
-    display: inline-block;
-    width: 800px;
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-
-/** End of Carousel Styles **/
-
-
 /*Start of Artist Page CSS*/
 
 .artistbox {
@@ -269,6 +256,7 @@ iframe {
     font-size: 15px;
     line-height: 24px;
     color: #737373;
+    bottom: 0;
 }
 
 .contact-footer h6 {
