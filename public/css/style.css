@@ -18,6 +18,10 @@ body {
     text-align: center;
 }
 
+a {
+    color: #00c067;
+}
+
 
 /** Navbar styles */
 
@@ -333,3 +337,34 @@ iframe {
 
 
 /*End of Artist Profile CSS*/
+
+
+/*Music Player Styles*/
+
+.music-player {
+    margin: auto;
+    padding: 0.33em;
+}
+
+.fa-play-circle,
+.fa-pause {
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.fa-play-circle:hover,
+.fa-pause:hover {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+}
+
+.progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #00c067;
+    height: 0.33em;
+}
+
+
+/*End of Music Player Styles*/

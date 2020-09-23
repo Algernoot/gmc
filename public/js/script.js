@@ -56,4 +56,52 @@ $(document).ready(function() {
         $(this).find('iframe').attr("src", playersrc);
     });
 
+    //music player scripts
+
+    //get audio
+    var audio = $('audio')[0];
+
+    //breath animation
+    function breath(object) {
+        setInterval(function() {
+            object.animate({ opacity: 0.5 }, 'slow').delay(500);
+            object.animate({ opacity: 1 }, 'slow').delay(500);
+        });
+    }
+
+    //Play to pause icon fade
+    $('body').on('click', '.fa-play-circle', function() {
+        $(this).fadeOut(200);
+        audio.play();
+        let icon = this;
+        setTimeout(function() {
+            icon.classList.remove('fa-play-circle');
+            icon.classList.add('fa-pause');
+        }, 200);
+        $(this).fadeIn(500);
+
+        breath($('.fa-pause'));
+    });
+
+    //Pause to play icon fade
+    $('body').on('click', '.fa-pause', function() {
+        $(this).fadeOut(200);
+        audio.pause();
+        let icon = this;
+        setTimeout(function() {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play-circle');
+        }, 200);
+        $(this).fadeIn(500);
+
+        breath($('.fa-play-circle'));
+    });
+
+    //progress bar
+    audio.ontimeupdate = function() {
+        $('.progress').css('width', audio.currentTime / audio.duration * 100 + '%');
+    }
+
+    //progress bar breath animation
+    breath($('.progress'));
 });
