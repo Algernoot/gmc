@@ -1,16 +1,27 @@
 <div class="d-flex top-img-short" style="background-image: url('/img/sample_top.png');"></div>
 <div class="cover d-flex" id="startchange">
+</div>
+<div class="h-100 mx-5 pb-5">
+
+    <!-- Audio Player -->
     <audio>
         <source src="/music/07-18-2020mp3.mp3" type="audio/wav">
     </audio>
-    <div class="music-player w-50 center">
-        <i class="fas fa-play-circle green-font"></i>
+    <div class="music-player py-3 w-50">
+        <div id="audio-button">
+            <i class="fas fa-play-circle fa-3x"></i>
+        </div>
+        <div id="audio-info">
+            <span class="d-none d-lg-inline">Sample Music</span>
+            <div id="audio-links">
+                <a class="spotify" href="https://www.spotify.com/"><i class="fab fa-spotify"></i></a>
+                <a class="spotify" href="https://www.soundcloud.com/"><i class="fab fa-soundcloud"></i></a>
+            </div>
+            <div class="d-none d-lg-block progress mt-1"></div>
+        </div>
     </div>
-    <div class="progress">
+    <!-- End of Audio Player -->
 
-    </div>
-</div>
-<div class="h-100 mx-5 p-5">
     <div class="row my-5">
         <div class="col-lg-6">
             <p class="title">{{{artist_name artist.name}}}</p>

@@ -56,7 +56,7 @@ $(document).ready(function() {
         $(this).find('iframe').attr("src", playersrc);
     });
 
-    //music player scripts
+    //MUSIC PLAYER SCRIPTS
 
     //get audio
     var audio = $('audio')[0];
@@ -76,32 +76,45 @@ $(document).ready(function() {
         let icon = this;
         setTimeout(function() {
             icon.classList.remove('fa-play-circle');
-            icon.classList.add('fa-pause');
+            icon.classList.add('fa-pause-circle');
+            breath($('.fa-pause-circle'));
         }, 200);
         $(this).fadeIn(500);
-
-        breath($('.fa-pause'));
     });
 
     //Pause to play icon fade
-    $('body').on('click', '.fa-pause', function() {
+    $('body').on('click', '.fa-pause-circle', function() {
         $(this).fadeOut(200);
         audio.pause();
         let icon = this;
         setTimeout(function() {
-            icon.classList.remove('fa-pause');
+            icon.classList.remove('fa-pause-circle');
             icon.classList.add('fa-play-circle');
+            breath($('.fa-play-circle'));
         }, 200);
         $(this).fadeIn(500);
 
-        breath($('.fa-play-circle'));
+    });
+
+    //move audio time using mouse click
+    $('body').on('click', '.progress', function(e) {
+        var mouseX = e.pageX;
+        var barX = $(this).offset().left;
+        audio.currentTime = Math.floor((mouseX - barX) / 2);
     });
 
     //progress bar
     audio.ontimeupdate = function() {
-        $('.progress').css('width', audio.currentTime / audio.duration * 100 + '%');
+        $('.progress').css('background', 'linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 0, 36, 1) ' + audio.currentTime / audio.duration * 100 + '%, rgba(0, 192, 103, 1) 0%, rgba(0, 0, 0, 0.75) 100%');
+
+        if (audio.currentTime == audio.duration) {
+            $('.fa-pause-circle').click();
+            audio.currentTime = 0;
+        }
     }
 
     //progress bar breath animation
     breath($('.progress'));
+
+    //END OF MUSIC PLAYER SCRIPTS
 });

@@ -11,6 +11,6 @@ module.exports = {
 
     //format for artist name
     artist_name: function(name) {
-        return '<span class="green-font">' + name.slice(0, 1) + '</span>' + name.slice(1);
+        return '<span class="green-font">' + name.slice(0, 1).toUpperCase() + '</span>' + name.slice(1).toUpperCase();
     }
 }
