@@ -157,7 +157,7 @@ a {
     position: absolute;
 }
 
-iframe {
+.card-iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -394,3 +394,9 @@ iframe {
 
 
 /*End of Music Player Styles*/
+
+
+/* Org Structure Styles */
+
+
+/*End of Org Structure Styles */
