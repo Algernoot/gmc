@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 /**
  * Schema for band DB
  * _id - generated id provided by mongodb
- * name - name of artist
- * history - history/description of artist
- * types - type of the artist. (band, solo, instrumentals, etc.)
- * images - images of the artist
+ * name - name of band
+ * history - history/description of band
+ * types - type of the band. (band, solo, instrumentals, etc.)
+ * images - images of the band
  * artists - list of artists in the band
  */
 const band_schema = mongoose.Schema({
@@ -59,5 +59,36 @@ exports.get_all = function(filter, callback) {
         });
 
         callback(band_objects);
+    });
+}
+
+/**
+ * Insert new band to database
+ * 
+ * Parameters:
+ * band_data - band of event to be converted to band_model
+ */
+exports.insert_band = function(band_data) {
+    var band = new band_model(band_data);
+
+    band.save(function(err, res) {
+        if (err) throw err;
+        console.log(res);
+    });
+}
+
+/**
+ * Delete band from db
+ * 
+ * Parameters:
+ * band_data - band of event to be converted to delete
+ */
+exports.delete_band = function(band_data) {
+    var band = new band_model(band_data);
+
+    band.deleteOne(function(err, res) {
+        if (err) throw err;
+
+        console.log(res);
     });
 }

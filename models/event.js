@@ -62,22 +62,32 @@ exports.get_all = function(filter, callback) {
 }
 
 /**
- * HARD CODE INSERT TO DB.
- * Replace with actual insert to DB
+ * Insert new event to database
+ * 
+ * Parameters:
+ * event_data - data of event to be converted to event_model
  */
-// exports.insert_event = function() {
-//     var event = new event_model({
-//         _id: mongoose.Types.ObjectId(),
-//         name: "Sample Event",
-//         description: "Sample event description. See your favorite artists perform on this event. Multiple people from different genres",
-//         images: " ",
-//         date: new Date(),
-//         artists: mongoose.Types.ObjectId()
-//     })
+exports.insert_event = function(event_data) {
+    var event = new event_model(event_data);
 
+    event.save(function(err, res) {
+        if (err) throw err;
+        console.log(res);
+    });
+}
 
-//     event.save(function(err, res) {
-//         if (err) throw err;
-//         console.log(res);
-//     })
-// }
+/**
+ * Delete event from db
+ * 
+ * Parameters:
+ * event_data - event of event to be converted to delete
+ */
+exports.delete_event = function(event_data) {
+    var event = new event_model(event_data);
+
+    event.deleteOne(function(err, res) {
+        if (err) throw err;
+
+        console.log(res);
+    });
+}

@@ -37,20 +37,32 @@ exports.get_one = function(filter, callback) {
 }
 
 /**
- * HARD CODE INSERT TO DB.
- * Replace with actual insert to DB
+ * Insert new admin to database
+ * 
+ * Parameters:
+ * admin_data - admin of event to be converted to admin_model
  */
-// exports.insert_admin = function() {
-//     var admin = new admin_model({
-//         _id: mongoose.Types.ObjectId(),
-//         name: "Sample Admin Name",
-//         type: "Lead Developer",
-//         username: "devadmin123",
-//         password: "admin123"
-//     });
+exports.insert_admin = function(admin_data) {
+    var admin = new admin_model(admin_data);
 
-//     admin.save(function(err, res) {
-//         if (err) throw err;
-//         console.log(res);
-//     });
-// }
+    admin.save(function(err, res) {
+        if (err) throw err;
+        console.log(res);
+    });
+}
+
+/**
+ * Delete admin from db
+ * 
+ * Parameters:
+ * admin_data - admin of event to be converted to delete
+ */
+exports.delete_admin = function(admin_data) {
+    var admin = new admin_model(admin_data);
+
+    admin.deleteOne(function(err, res) {
+        if (err) throw err;
+
+        console.log(res);
+    });
+}

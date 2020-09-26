@@ -61,20 +61,32 @@ exports.get_all = function(filter, callback) {
 }
 
 /**
- * HARD CODE INSERT TO DB.
- * Replace with actual insert to DB
+ * Insert new artist to database
+ * 
+ * Parameters:
+ * artist_data - artist of event to be converted to artist_model
  */
-// exports.insert_artist = function() {
-//     var artist = new artist_model({
-//         _id: mongoose.Types.ObjectId(),
-//         name: "Sample Artist",
-//         history: "Sample artist history or description.",
-//         types: ["solo", "instrumentalist"],
-//         images: " "
-//     });
+exports.insert_artist = function(artist_data) {
+    var artist = new artist_model(artist_data);
 
-//     artist.save(function(err, res) {
-//         if (err) throw err;
-//         console.log(res);
-//     })
-// }
+    artist.save(function(err, res) {
+        if (err) throw err;
+        console.log(res);
+    });
+}
+
+/**
+ * Delete artist from db
+ * 
+ * Parameters:
+ * artist_data - artist of event to be converted to delete
+ */
+exports.delete_artist = function(artist_data) {
+    var artist = new artist_model(artist_data);
+
+    artist.deleteOne(function(err, res) {
+        if (err) throw err;
+
+        console.log(res);
+    });
+}
