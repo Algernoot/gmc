@@ -29,3 +29,15 @@ exports.get_artist_profile = function(req, res) {
         });
     });
 }
+
+exports.add = function(req, res) {
+    artist_model.insert_artist({ /*artist here*/ }, function(res) {
+        console.log(res);
+    });
+}
+
+exports.delete = function(req, res) {
+    artist_model.delete_artist({ /*artist here*/ }, function(res) {
+        console.log(res);
+    });
+}

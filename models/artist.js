@@ -66,12 +66,12 @@ exports.get_all = function(filter, callback) {
  * Parameters:
  * artist_data - artist of event to be converted to artist_model
  */
-exports.insert_artist = function(artist_data) {
+exports.insert_artist = function(artist_data, callback) {
     var artist = new artist_model(artist_data);
 
     artist.save(function(err, res) {
         if (err) throw err;
-        console.log(res);
+        callback(res);
     });
 }
 
@@ -81,12 +81,11 @@ exports.insert_artist = function(artist_data) {
  * Parameters:
  * artist_data - artist of event to be converted to delete
  */
-exports.delete_artist = function(artist_data) {
+exports.delete_artist = function(artist_data, callback) {
     var artist = new artist_model(artist_data);
 
     artist.deleteOne(function(err, res) {
         if (err) throw err;
-
-        console.log(res);
+        callback(res);
     });
 }

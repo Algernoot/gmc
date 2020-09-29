@@ -38,3 +38,15 @@ exports.get_event_profile = function(req, res) {
         });
     });
 }
+
+exports.add = function(req, res) {
+    event_model.insert_artist({ /*event here*/ }, function(res) {
+        console.log(res);
+    });
+}
+
+exports.delete = function(req, res) {
+    event_model.delete_artist({ /*event here*/ }, function(res) {
+        console.log(res);
+    });
+}

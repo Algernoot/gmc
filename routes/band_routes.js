@@ -12,3 +12,7 @@ const band_controller = require('../controller/band_controller');
 router.get('/', band_controller.get_bandpage);
 
 router.get('/:bandId', band_controller.get_band_profile);
+
+router.post('/add', band_controller.add);
+
+router.post('/delete', band_controller.delete);

@@ -29,3 +29,15 @@ exports.get_band_profile = function(req, res) {
         });
     });
 }
+
+exports.add = function(req, res) {
+    band_model.insert_artist({ /*band here*/ }, function(res) {
+        console.log(res);
+    });
+}
+
+exports.delete = function(req, res) {
+    band_model.delete_artist({ /*band here*/ }, function(res) {
+        console.log(res);
+    });
+}

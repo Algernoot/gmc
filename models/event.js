@@ -67,12 +67,12 @@ exports.get_all = function(filter, callback) {
  * Parameters:
  * event_data - data of event to be converted to event_model
  */
-exports.insert_event = function(event_data) {
+exports.insert_event = function(event_data, callback) {
     var event = new event_model(event_data);
 
     event.save(function(err, res) {
         if (err) throw err;
-        console.log(res);
+        callback(res);
     });
 }
 
@@ -82,12 +82,12 @@ exports.insert_event = function(event_data) {
  * Parameters:
  * event_data - event of event to be converted to delete
  */
-exports.delete_event = function(event_data) {
+exports.delete_event = function(event_data, callback) {
     var event = new event_model(event_data);
 
     event.deleteOne(function(err, res) {
         if (err) throw err;
 
-        console.log(res);
+        callback(res);
     });
 }

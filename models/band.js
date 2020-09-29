@@ -68,12 +68,12 @@ exports.get_all = function(filter, callback) {
  * Parameters:
  * band_data - band of event to be converted to band_model
  */
-exports.insert_band = function(band_data) {
+exports.insert_band = function(band_data, callback) {
     var band = new band_model(band_data);
 
     band.save(function(err, res) {
         if (err) throw err;
-        console.log(res);
+        callback(res);
     });
 }
 
@@ -83,12 +83,11 @@ exports.insert_band = function(band_data) {
  * Parameters:
  * band_data - band of event to be converted to delete
  */
-exports.delete_band = function(band_data) {
+exports.delete_band = function(band_data, callback) {
     var band = new band_model(band_data);
 
     band.deleteOne(function(err, res) {
         if (err) throw err;
-
-        console.log(res);
+        callback(res);
     });
 }
