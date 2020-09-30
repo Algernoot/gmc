@@ -9,7 +9,6 @@
 const mongoose = require('mongoose');
 const artist_model = require('../models/artist');
 const event_model = require('../models/event');
-const admin_model = require('../models/admin');
 
 exports.get_homepage = function(req, res) {
     artist_model.get_all({}, function(artists) {
@@ -30,6 +29,7 @@ exports.get_aboutpage = function(req, res) {
         active: { about: true }
     });
 }
+
 
 exports.get_searchpage = function(req, res) {
     var query = req.query;

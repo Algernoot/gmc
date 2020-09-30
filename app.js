@@ -17,7 +17,7 @@ const public_route = require('./routes/public_routes');
 const event_route = require('./routes/event_routes');
 const artist_route = require('./routes/artist_routes');
 const band_route = require('./routes/band_routes');
-
+const admin_route = require('./routes/admin_routes');
 //database
 const dbURL = 'mongodb://localhost:27017/gmcdb';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -49,3 +49,4 @@ app.use('/', public_route);
 app.use('/events', event_route);
 app.use('/artists', artist_route);
 app.use('/bands', band_route);
+app.use('/admin', admin_route);

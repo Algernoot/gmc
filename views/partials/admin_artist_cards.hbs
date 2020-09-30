@@ -1,0 +1,8 @@
+<div class="artist-block" data="{{artist._id}}">
+    <div class=artist-block-hide>
+        <img class="image" src="/img/artist_bg.png">
+        <p class="artist-block-name">{{artist.name}}</p>
+    </div>
+    <a href="admin/AddEditArtist/{{artist._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+     <a href="/admin/delete/{{artist._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+</div>

@@ -1,0 +1,20 @@
+<div class="center mx-5">
+    <div class="artistbox mx-4">
+        <p class="title"><span class="green-font">A</span>RTISTS<a href="admin/AddEditArtist"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></p>
+        {{#each artists}}
+            {{>admin_artist_card artist = this}}
+        {{/each}}
+    </div>
+    <p class="title"><span class="green-font">P</span>AST <span class="green-font">E</span>VENTS<a href="admin/AddEditEvent"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></p>
+    <div class="eventbox-past mx-4">
+        {{#each past}}
+            {{>admin_event_card event = this}}
+        {{/each}}
+    </div>
+    <p class="title mt-5"><span class="green-font">U</span>PCOMING <span class="green-font">E</span>VENTS<a href="admin/AddEditEvent"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></p>
+    <div class="eventbox-future mx-4">
+        {{#each upcoming}}
+            {{>admin_event_card event = this}}
+        {{/each}}
+    </div>
+</div>

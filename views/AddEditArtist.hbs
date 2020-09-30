@@ -1,0 +1,23 @@
+<form action="/artist/add" autocomplete="off">
+    <input type="hidden" value="{{artist._id}}">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control"  value="{{artist.name}}">
+    <div class="form-group">
+        <label>Histroy</label>
+        <input type="text" class="form-control"  value="{{artist.history}}">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Types</label>
+            <input type="text" class="form-control" value="{{artist.types}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Images</label>
+            <input type="file" class="form-control" value="{{artist.images}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/admin"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
