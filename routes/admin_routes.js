@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { json } = require('body-parser');
 const express = require('express');
 module.exports = router;
 const mongoose = require('mongoose');
@@ -13,7 +14,7 @@ const admin_controller = require('../controller/admin_controller');
 router.get('/', admin_controller.get_adminpage);
 router.get('/AddEditArtist',admin_controller.get_add_edit_artist);
 router.get('/AddEditEvent',admin_controller.get_add_edit_event);
-router.get('/deleteArtist/:id', (req, res) => {
+router.get('/DeleteArtist/:id', (req, res) => {
     artist.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
             res.redirect('/admin');
@@ -21,7 +22,7 @@ router.get('/deleteArtist/:id', (req, res) => {
         else { console.log('Error in artist delete :' + err); }
     });
 });
-router.get('/deleteevent/:id', (req, res) => {
+router.get('/DeleteEvent/:id', (req, res) => {
     event.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
             res.redirect('/admin');
@@ -35,7 +36,7 @@ router.get('/AddEditArtist/:id', (req, res) => {
         if (!err) {
             res.render("admin/AddEditArtist", {
                 viewTitle: "Update Artist",
-                employee: doc
+                artist: doc
             });
         }
     });
@@ -46,7 +47,7 @@ router.get('/AddEditEvent/:id', (req, res) => {
         if (!err) {
             res.render("admin/AddEditEvent", {
                 viewTitle: "Update Event",
-                employee: doc
+                event: doc
             });
         }
     });
