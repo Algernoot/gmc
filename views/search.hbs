@@ -6,7 +6,7 @@
             <p class="title"><span class="green-font">A</span>rtists</p>
             <ul>
             {{#each artists}}
-                <li><a href="#">{{name}}</a></li>
+                <li><a href="/artists/{{_id}}">{{name}}</a></li>
             {{/each}}
             </ul>
         {{/if}}
@@ -14,7 +14,7 @@
             <p class="title"><span class="green-font">E</span>vents</p>
             <ul>
             {{#each events}}
-                <li><a href="#">{{name}} ({{date_format date}})</a></li>
+                <li><a href="/events/{{_id}}">{{name}} ({{date_format date}})</a></li>
             {{/each}}
             </ul>
         {{/if}}

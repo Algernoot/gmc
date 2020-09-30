@@ -1,11 +1,11 @@
 <div class="center mx-5">
-    <div class="artistbox mx-4">
-        <p class="title"><span class="green-font">A</span>RTISTS<a href="admin/AddEditArtist"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></p>
+    <div class="artistbox mx-4 mb-5">
+        <p class="title"><span class="green-font">A</span>RTISTS <a href="admin/AddEditArtist"><i class="fa fa-plus fa-sm" aria-hidden="true"></i></a></p>
         {{#each artists}}
             {{>artist_card artist = this admin=true}}
         {{/each}}
     </div>
-    <p class="title"><span class="green-font">E</span>VENTS<a href="admin/AddEditEvent"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></p>
+    <p class="title"><span class="green-font">E</span>VENTS <a href="admin/AddEditEvent"><i class="fa fa-plus fa-sm" aria-hidden="true"></i></a></p>
     <div class="eventbox-past mx-4">
         {{#each events}}
             {{>event_card event = this admin=true}}

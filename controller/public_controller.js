@@ -11,8 +11,10 @@ const artist_model = require('../models/artist');
 const event_model = require('../models/event');
 
 exports.get_homepage = function(req, res) {
+    let current_date = new Date();
     artist_model.get_all({}, function(artists) {
-        event_model.get_all({}, function(events) {
+        event_model.get_all({}, function(result) {
+            var events = result.filter(event => event.date > current_date);
             res.render('home', {
                 title: 'GMC - Home',
                 artists,
