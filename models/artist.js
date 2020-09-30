@@ -87,3 +87,18 @@ exports.delete_artist = function(filter, callback) {
         callback(res);
     });
 }
+
+/**
+ * Edit artist on db
+ * 
+ * Parameters:
+ * artist_data - id of artist to be converted to edited
+ */
+exports.edit_artist = function(artist_data, callback) {
+    var artist = new artist_model(artist_data);
+    artist_model.findOneAndUpdate({ _id: artist_data._id }, artist, function(err, res) {
+        if (err) throw err;
+        callback(res);
+
+    });
+}

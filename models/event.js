@@ -91,3 +91,17 @@ exports.delete_event = function(event_data, callback) {
         callback(res);
     });
 }
+
+/**
+ * Edit event on db
+ * 
+ * Parameters:
+ * event_data - id of event to be converted to edited
+ */
+exports.edit_event = function(event_data, callback) {
+    var event = new event_model(event_data);
+    event_model.findOneAndUpdate({ _id: event_data._id }, event, function(err, res) {
+        if (err) throw err;
+        callback(res);
+    });
+}

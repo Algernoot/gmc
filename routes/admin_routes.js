@@ -13,23 +13,22 @@ const admin_controller = require('../controller/admin_controller');
 
 router.get('/', admin_controller.get_adminpage);
 
-router.get('/AddEditArtist', admin_controller.get_add_edit_artist);
+router.get('/AddEditArtist', admin_controller.get_add_artist);
+
+router.get('/AddEditArtist/:id', admin_controller.get_edit_artist);
 
 router.post('/addArtist', admin_controller.add_artist);
 
-router.get('/AddEditEvent', admin_controller.get_add_edit_event);
+router.post('/editArtist', admin_controller.edit_artist);
+
+router.get('/deleteArtist/:id', admin_controller.delete_artist);
+
+router.get('/AddEditEvent', admin_controller.get_add_event);
+
+router.get('/AddEditEvent/:id', admin_controller.get_edit_event);
 
 router.post('/addEvent', admin_controller.add_event);
 
-router.get('/delete/:id', admin_controller.delete_artist);
+router.post('/editEvent', admin_controller.edit_event);
 
-router.get('/AddEditEvent/:id', (req, res) => {
-    Employee.findById(req.params.id, (err, doc) => {
-        if (!err) {
-            res.render("admin/AddEditEvent", {
-                viewTitle: "Update Event",
-                event: doc
-            });
-        }
-    });
-});
+router.get('/deleteEvent/:id', admin_controller.delete_event);

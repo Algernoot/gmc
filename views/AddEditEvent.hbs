@@ -1,4 +1,8 @@
+{{#if event}}
+<form action="/admin/editEvent" method= "POST" autocomplete="off">
+{{else}}
 <form action="addEvent" method= "POST" autocomplete="off">
+{{/if}}
     <input type="hidden" name="_id" value="{{event._id}}">
     <div class="form-group">
         <label>Name</label>

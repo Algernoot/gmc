@@ -36,10 +36,11 @@ $(document).ready(function() {
 
     /** End of Navbar settings */
 
-    $('body').on('click', '.event-card', function() {
+    $('body').on('click', '.event-card', function(e) {
         let id = $(this).attr('data');
 
-        window.location.href = "/events/" + id;
+        if (!e.target.classList.contains('fa-lg'))
+            window.location.href = "/events/" + id;
     });
     $('body').on('click', '.artist-block', function() {
         let id = $(this).attr('data');

@@ -290,7 +290,9 @@ a {
 .fa-twitter,
 .fa-instagram,
 .fa-spotify,
-.fa-soundcloud {
+.fa-soundcloud,
+.fa-pencil-alt,
+.fa-trash {
     padding: 10px 14px;
     -o-transition: .5s;
     -ms-transition: .5s;
@@ -304,7 +306,9 @@ a {
 .fa-twitter:hover,
 .fa-instagram:hover,
 .fa-spotify:hover,
-.fa-soundcloud:hover {
+.fa-soundcloud:hover,
+.fa-pencil-alt:hover,
+.fa-trash:hover {
     background-color: white;
 }
 
@@ -395,9 +399,18 @@ a {
 
 /*End of Music Player Styles*/
 
+
 /*admin side styles*/
 
+.admin-controls {
+    display: block;
+    position: absolute;
+    top: 0
+}
+
+
 /*End of admin side styles*/
+
 
 /* Org Structure Styles */
 

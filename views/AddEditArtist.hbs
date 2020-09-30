@@ -1,5 +1,9 @@
+{{#if artist}}
+<form action="/admin/editArtist" autocomplete="off" method="POST">
+{{else}}
 <form action="AddArtist" autocomplete="off" method="POST">
-    <input type="hidden" value="{{artist._id}}">
+{{/if}}
+    <input type="hidden" name="_id" value="{{artist._id}}">
     <div class="form-group">
         <label>Full Name</label>
         <input type="text" class="form-control" name="name" value="{{artist.name}}">
