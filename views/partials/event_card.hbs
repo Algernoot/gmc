@@ -10,4 +10,8 @@
     <div class="bottom_cover"></div>
     
     <p class="event-card-desc">{{event.description}}</p>
+    {{#if admin}}    
+        <a href="admin/AddEditEvent/{{event._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+        <a href="/admin/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+    {{/if}}
 </div>

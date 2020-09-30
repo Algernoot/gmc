@@ -68,11 +68,7 @@ exports.get_all = function(filter, callback) {
  */
 exports.insert_artist = function(artist_data, callback) {
     var artist = new artist_model(artist_data);
-    artist._id = artist_data._id;
-    artist.name = artist_data.name;
-    artist.history = artist_data.history;
-    artist.types = artist_data.types;
-    artist.images = artist_data.images;
+
     artist.save(function(err, res) {
         if (err) throw err;
         callback(res);
@@ -85,10 +81,8 @@ exports.insert_artist = function(artist_data, callback) {
  * Parameters:
  * artist_data - artist of event to be converted to delete
  */
-exports.delete_artist = function(artist_data, callback) {
-    var artist = new artist_model(artist_data);
-
-    artist.deleteOne(function(err, res) {
+exports.delete_artist = function(filter, callback) {
+    artist_model.deleteOne(filter, function(err, res) {
         if (err) throw err;
         callback(res);
     });

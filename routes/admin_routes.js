@@ -12,35 +12,16 @@ const event = mongoose.model('Event');
 const admin_controller = require('../controller/admin_controller');
 
 router.get('/', admin_controller.get_adminpage);
-router.get('/AddEditArtist',admin_controller.get_add_edit_artist);
-router.get('/AddEditEvent',admin_controller.get_add_edit_event);
-router.get('/DeleteArtist/:id', (req, res) => {
-    artist.findByIdAndRemove(req.params.id, (err, doc) => {
-        if (!err) {
-            res.redirect('/admin');
-        }
-        else { console.log('Error in artist delete :' + err); }
-    });
-});
-router.get('/DeleteEvent/:id', (req, res) => {
-    event.findByIdAndRemove(req.params.id, (err, doc) => {
-        if (!err) {
-            res.redirect('/admin');
-        }
-        else { console.log('Error in event delete :' + err); }
-    });
-});
 
-router.get('/AddEditArtist/:id', (req, res) => {
-    Employee.findById(req.params.id, (err, doc) => {
-        if (!err) {
-            res.render("admin/AddEditArtist", {
-                viewTitle: "Update Artist",
-                artist: doc
-            });
-        }
-    });
-});
+router.get('/AddEditArtist', admin_controller.get_add_edit_artist);
+
+router.post('/addArtist', admin_controller.add_artist);
+
+router.get('/AddEditEvent', admin_controller.get_add_edit_event);
+
+router.post('/addEvent', admin_controller.add_event);
+
+router.get('/delete/:id', admin_controller.delete_artist);
 
 router.get('/AddEditEvent/:id', (req, res) => {
     Employee.findById(req.params.id, (err, doc) => {

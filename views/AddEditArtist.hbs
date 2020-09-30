@@ -1,19 +1,19 @@
-<form action="/admin/AddEditArtist" autocomplete="off">
+<form action="AddArtist" autocomplete="off" method="POST">
     <input type="hidden" value="{{artist._id}}">
     <div class="form-group">
         <label>Full Name</label>
-        <input type="text" class="form-control"  value="{{artist.name}}">
+        <input type="text" class="form-control" name="name" value="{{artist.name}}">
     <div class="form-group">
-        <label>Histroy</label>
-        <input type="text" class="form-control"  value="{{artist.history}}">
+        <label>History</label>
+        <input type="text" class="form-control" name="history" value="{{artist.history}}">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Types</label>
-            <input type="text" class="form-control" value="{{artist.types}}">
+            <input type="text" class="form-control" name="types" value="{{artist.types}}">
         </div>
         <div class="form-group col-md-6">
             <label>Images</label>
-            <input type="file" class="form-control" value="{{artist.images}}">
+            <input type="file" class="form-control" name="images" value="{{artist.images}}">
         </div>
     </div>
     <div class="form-group">
