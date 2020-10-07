@@ -1,27 +1,35 @@
-{{#if event}}
-<form action="/admin/editEvent" method= "POST" autocomplete="off">
-{{else}}
-<form action="addEvent" method= "POST" autocomplete="off">
-{{/if}}
-    <input type="hidden" name="_id" value="{{event._id}}">
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" class="form-control"  name="name" value="{{event.name}}">
-    <div class="form-group">
-        <label>Description</label>
-        <input type="text" class="form-control"  name="description" value="{{event.description}}">
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>Date</label>
-            <input type="date" class="form-control" name="date" value="{{event.date}}">
-        </div>
-        <div class="form-group col-md-6">
-            <label>Images</label>
-            <input type="file" class="form-control" name="images" value="{{event.images}}">
-        </div>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
-        <a class="btn btn-secondary" href="/admin"><i class="fa fa-list-alt"></i> View All</a>
-    </div>
-</form>
+<div class="mx-5">
+    {{#if event}}
+    <p class="title">Edit Event</p>
+    <hr>
+    <form action="/admin/editEvent" method="POST" autocomplete="off">
+    {{else}}
+    <p class="title">Create Event</p>
+    <hr>
+    <form action="addEvent" method="POST" autocomplete="off">
+    {{/if}}
+            <input type="hidden" name="_id" value="{{event._id}}">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" value="{{event.name}}">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" name="description" value="{{event.description}}">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Date</label>
+                            <input type="date" class="form-control" name="date" value="{{event.date}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Images</label>
+                            <input type="file" class="form-control" name="images" value="{{event.images}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+                        <a class="btn btn-secondary" href="/admin"><i class="fa fa-list-alt"></i> View All</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+</div>

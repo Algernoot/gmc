@@ -292,6 +292,7 @@ a {
 .fa-instagram,
 .fa-spotify,
 .fa-soundcloud,
+.fa-plus,
 .fa-pencil-alt,
 .fa-trash {
     padding: 10px 14px;
@@ -308,6 +309,7 @@ a {
 .fa-instagram:hover,
 .fa-spotify:hover,
 .fa-soundcloud:hover,
+.fa-plus:hover,
 .fa-pencil-alt:hover,
 .fa-trash:hover {
     background-color: white;

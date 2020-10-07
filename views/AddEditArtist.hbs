@@ -1,27 +1,35 @@
-{{#if artist}}
-<form action="/admin/editArtist" autocomplete="off" method="POST">
-{{else}}
-<form action="AddArtist" autocomplete="off" method="POST">
-{{/if}}
-    <input type="hidden" name="_id" value="{{artist._id}}">
-    <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" class="form-control" name="name" value="{{artist.name}}">
-    <div class="form-group">
-        <label>History</label>
-        <input type="text" class="form-control" name="history" value="{{artist.history}}">
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>Types</label>
-            <input type="text" class="form-control" name="types" value="{{artist.types}}">
-        </div>
-        <div class="form-group col-md-6">
-            <label>Images</label>
-            <input type="file" class="form-control" name="images" value="{{artist.images}}">
-        </div>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
-        <a class="btn btn-secondary" href="/admin"><i class="fa fa-list-alt"></i> View All</a>
-    </div>
-</form>
+<div class="mx-5">
+    {{#if artist}}
+    <p class="title">Edit Artist</p>
+    <hr>
+    <form action="/admin/editArtist" autocomplete="off" method="POST">
+    {{else}}
+    <p class="title">Create Artist</p>
+    <hr>
+    <form action="AddArtist" autocomplete="off" method="POST">
+    {{/if}}
+            <input type="hidden" name="_id" value="{{artist._id}}">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" class="form-control" name="name" value="{{artist.name}}">
+                <div class="form-group">
+                    <label>History</label>
+                    <input type="text" class="form-control" name="history" value="{{artist.history}}">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Types</label>
+                            <input type="text" class="form-control" name="types" value="{{artist.types}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Images</label>
+                            <input type="file" class="form-control" name="images" value="{{artist.images}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+                        <a class="btn btn-secondary" href="/admin"><i class="fa fa-list-alt"></i> View All</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+</div>
