@@ -11,7 +11,7 @@ const event = mongoose.model('Event');
 //Controllers
 const admin_controller = require('../controller/admin_controller');
 
-router.get('/', admin_controller.get_adminpage);
+router.get('/', admin_controller.get_adminLogin);
 
 router.get('/AddEditArtist', admin_controller.get_add_artist);
 

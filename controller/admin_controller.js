@@ -3,6 +3,12 @@ const admin_model = require('../models/admin');
 const artist_model = require('../models/artist');
 const event_model = require('../models/event');
 
+exports.get_adminLogin = function(req, res) {
+    res.render('admin_login', {
+        title: 'Admin Login'
+    })
+}
+
 exports.get_adminpage = function(req, res) {
     artist_model.get_all({}, function(artists) {
         event_model.get_all({}, function(events) {
